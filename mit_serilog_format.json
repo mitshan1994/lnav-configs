@@ -6,8 +6,8 @@
         "pattern": "(?<timestamp>\\d{2}:\\d{2}:\\d{2}\\.\\d{3}) \\[(?<level>[VDIWE])\\] \\[(?<thread>\\d+)\\] \\[(?<source>[^\\]]*)\\]\\s*(?<body>.*)"
       }
     },
-    "timestamp-format": [
-      "%H:%M:%S.%L"
+    "--timestamp-format": [
+      "%H:%M:%S.%f"
     ],
     "level-field": "level",
     "level": {
