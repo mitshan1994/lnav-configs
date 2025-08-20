@@ -1,0 +1,46 @@
+{
+  "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+  "mit_serilog": {
+    "regex": {
+      "common": {
+        "pattern": "(?<timestamp>\\d{2}:\\d{2}:\\d{2}\\.\\d{3}) \\[(?<level>[VDIWE])\\] \\[(?<thread>\\d+)\\] \\[(?<source>[^\\]]*)\\]\\s*(?<body>.*)"
+      }
+    },
+    "timestamp-format": [
+      "%H:%M:%S.%L"
+    ],
+    "level-field": "level",
+    "level": {
+      "trace": "V|T",
+      "debug": "D",
+      "info": "I",
+      "warning": "W",
+      "error": "E"
+    },
+    "value": {
+      "thread": {
+        "kind": "string",
+        "identifier": false
+      },
+      "source": {
+        "kind": "string",
+        "identifier": false
+      },
+      "level": {
+        "kind": "string"
+      },
+      "body": {
+        "kind": "string"
+      }
+    },
+    "sample": [
+      {
+        "line": "09:08:48.516 [V] [7] [ShipArSvc.Core.Services.ShipInfoSvc.ShipAisMgrSvc] Updated history records. Current number: 3414"
+      },
+      {
+        "line": "09:08:58.124 [I] [15] [ShipArSvc.Core.Services.ArWs.ArWsSvc] Need to simulate ship: False, session id: 3dc4cbb"
+      }
+    ]
+  }
+}
+
